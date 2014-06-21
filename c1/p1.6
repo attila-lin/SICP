@@ -1,0 +1,16 @@
+1 ]=> (load "sqrt-iter.scm")
+
+;Loading "sqrt-iter.scm"...
+;  Loading "improve.scm"... done
+;  Loading "average.scm"... done
+;  Loading "good-enough.scm"... done
+;... done
+;Value: sqrt-iter
+
+1 ]=> (sqrt-iter 1 9)
+
+;Value: 65537/21845
+
+当用new-if时，似乎陷入死循环。
+当使用(if predicate clause else-clause)时，scheme先判断predicate然后运行clause或者else-clause。
+而new-if会对所有情况进行递归调用。
